@@ -1,0 +1,32 @@
+﻿<Window x:Name="MainWindow1" x:Class="PuTTY_Deployment.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:PuTTY_Deployment"
+        mc:Ignorable="d"
+        Title="PuTTY Deployment" Height="440" Width="400" ResizeMode="NoResize" WindowStartupLocation="CenterScreen" WindowStyle="ToolWindow">
+    <Window.Background>
+        <SolidColorBrush Color="{DynamicResource {x:Static SystemColors.MenuColorKey}}"/>
+    </Window.Background>
+    <Grid>
+        <TextBlock x:Name="textBlock" HorizontalAlignment="Left" Margin="30,30,0,0" TextWrapping="Wrap" Text="Network Interface" VerticalAlignment="Top"/>
+        <ComboBox x:Name="comboBoxNIC" HorizontalAlignment="Left" Margin="139,30,0,0" VerticalAlignment="Top" Width="210" IsReadOnly="True" SelectionChanged="ComboBoxNIC_SelectionChanged"/>
+        <StackPanel Margin="30,118,269,207" Orientation="Vertical">
+            <CheckBox x:Name="checkBoxPrd" Content="STARPRD" HorizontalAlignment="Left" VerticalAlignment="Top"/>
+            <CheckBox x:Name="checkBoxQa" Content="STARQA" HorizontalAlignment="Left" VerticalAlignment="Top"/>
+            <CheckBox x:Name="checkBoxStg" Content="STARSTG" HorizontalAlignment="Left" VerticalAlignment="Top"/>
+            <CheckBox x:Name="checkBoxTst" Content="STARTST" HorizontalAlignment="Left" VerticalAlignment="Top"/>
+
+        </StackPanel>
+        <CheckBox x:Name="checkBoxAll" Content="Select All" HorizontalAlignment="Left" VerticalAlignment="Top" Checked="CheckBoxAll_Checked" Unchecked="CheckBoxAll_Unchecked" Margin="30,356,0,0"/>
+        <Button x:Name="buttonDeploy" Content="Deploy" HorizontalAlignment="Left" Margin="274,353,0,0" VerticalAlignment="Top" Width="75" Click="ButtonDeploy_Click"/>
+        <Label x:Name="label" Content="MAC Address" HorizontalAlignment="Left" Margin="43,60,0,0" VerticalAlignment="Top"/>
+        <TextBox x:Name="textBoxMAC" HorizontalAlignment="Left" Height="23" Margin="139,64,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="210" IsReadOnly="True"/>
+        <CheckBox x:Name="checkBoxShortcut" Content="Create Session Shortcuts on Desktop" HorizontalAlignment="Left" Margin="30,209,0,0" VerticalAlignment="Top" Checked="CheckBoxShortcut_Checked" Unchecked="CheckBoxShortcut_Unchecked"/>
+        <StackPanel HorizontalAlignment="Left" VerticalAlignment="Top" Height="30" Width="268" Margin="52,229,0,0">
+            <RadioButton x:Name="rbPublic" Content="Public (Needs to be run as Administrator)" IsChecked="True" IsEnabled="False"/>
+            <RadioButton x:Name="rbUser" Content="User" IsEnabled="False"/>
+        </StackPanel>
+    </Grid>
+</Window>
